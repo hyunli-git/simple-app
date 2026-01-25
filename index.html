@@ -3,18 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vinyl Player</title>
+  <title>Vinyl Player - Virtual Turntable & LP Collection</title>
+  <meta name="description" content="Experience the nostalgia of vinyl records with Vinyl Player. Browse your virtual LP collection and enjoy a realistic turntable experience in your browser.">
+  <meta name="keywords" content="vinyl player, turntable, LP collection, music player, vinyl records, retro music">
+  <meta name="author" content="Vinyl Player">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="/">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7228257979516051" crossorigin="anonymous"></script>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-consent" id="cookieConsent">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience and show personalized ads. By continuing to use this site, you agree to our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.</p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn accept" id="acceptCookies">Accept All</button>
+        <button class="cookie-btn decline" id="declineCookies">Decline</button>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <a href="/" class="nav-logo">Vinyl Player</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </nav>
+
     <header>
       <h1>Vinyl Collection</h1>
-      <p class="subtitle">Select an LP to play</p>
+      <p class="subtitle">Experience the warmth of vinyl - Select an LP to play</p>
     </header>
 
     <main>
+      <!-- Introduction Section -->
+      <section class="intro-section">
+        <p>Welcome to Vinyl Player, your virtual turntable experience. Browse through our curated collection of LPs and enjoy the nostalgic feeling of vinyl records right in your browser. Click on any album to start playing!</p>
+      </section>
+
       <!-- Vinyl Player Section -->
       <section class="player-section">
         <div class="turntable">
@@ -46,28 +77,85 @@
             <span id="duration">0:00</span>
           </div>
           <div class="controls">
-            <button class="control-btn" id="prevBtn" title="Previous">
+            <button class="control-btn" id="prevBtn" title="Previous Track" aria-label="Previous Track">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
             </button>
-            <button class="control-btn play-btn" id="playBtn" title="Play">
+            <button class="control-btn play-btn" id="playBtn" title="Play/Pause" aria-label="Play or Pause">
               <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </button>
-            <button class="control-btn" id="nextBtn" title="Next">
+            <button class="control-btn" id="nextBtn" title="Next Track" aria-label="Next Track">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
             </button>
           </div>
+          <p class="controls-hint">Tip: Use Space to play/pause, Arrow keys to skip tracks</p>
         </div>
       </section>
 
       <!-- LP Collection Section -->
       <section class="collection-section">
         <h2>Your Collection</h2>
+        <p class="section-description">Click on any album cover to load it onto the turntable and start playing.</p>
         <div class="lp-grid" id="lpGrid">
           <!-- LPs will be inserted by JavaScript -->
         </div>
       </section>
+
+      <!-- Features Section -->
+      <section class="features-section">
+        <h2>Why Vinyl Player?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <h3>Realistic Experience</h3>
+            <p>Watch the vinyl spin with authentic grooves and a moving tonearm that responds to playback.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <h3>Album Collection</h3>
+            <p>Browse through beautifully designed album covers with unique colors and styles.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h3>Easy Controls</h3>
+            <p>Simple play, pause, and skip controls with keyboard shortcuts for hands-free operation.</p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Vinyl Player</h3>
+          <p>Experience the nostalgia of vinyl records with our virtual turntable. Free to use, no downloads required.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 Vinyl Player. All rights reserved.</p>
+      </div>
+    </footer>
   </div>
 
   <audio id="audioPlayer"></audio>

@@ -268,5 +268,31 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Cookie Consent
+const cookieConsent = document.getElementById('cookieConsent');
+const acceptCookies = document.getElementById('acceptCookies');
+const declineCookies = document.getElementById('declineCookies');
+
+function checkCookieConsent() {
+  const consent = localStorage.getItem('cookieConsent');
+  if (consent) {
+    cookieConsent.classList.add('hidden');
+  }
+}
+
+function setCookieConsent(accepted) {
+  localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
+  cookieConsent.classList.add('hidden');
+}
+
+if (acceptCookies) {
+  acceptCookies.addEventListener('click', () => setCookieConsent(true));
+}
+
+if (declineCookies) {
+  declineCookies.addEventListener('click', () => setCookieConsent(false));
+}
+
 // Initialize
+checkCookieConsent();
 initLpGrid();
