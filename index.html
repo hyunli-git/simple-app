@@ -3,12 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Vinyl Player</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <header>
+      <h1>Vinyl Collection</h1>
+      <p class="subtitle">Select an LP to play</p>
+    </header>
+
+    <main>
+      <!-- Vinyl Player Section -->
+      <section class="player-section">
+        <div class="turntable">
+          <div class="platter">
+            <div class="vinyl" id="vinyl">
+              <div class="vinyl-label" id="vinylLabel">
+                <span class="label-text" id="labelText">No LP</span>
+              </div>
+              <div class="vinyl-grooves"></div>
+            </div>
+          </div>
+          <div class="tonearm" id="tonearm">
+            <div class="tonearm-base"></div>
+            <div class="tonearm-arm"></div>
+            <div class="tonearm-head"></div>
+          </div>
+        </div>
+
+        <div class="now-playing">
+          <div class="track-info">
+            <h2 id="trackTitle">Select an LP</h2>
+            <p id="trackArtist">Choose from your collection below</p>
+          </div>
+          <div class="progress-container">
+            <span id="currentTime">0:00</span>
+            <div class="progress-bar">
+              <div class="progress" id="progress"></div>
+            </div>
+            <span id="duration">0:00</span>
+          </div>
+          <div class="controls">
+            <button class="control-btn" id="prevBtn" title="Previous">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button class="control-btn play-btn" id="playBtn" title="Play">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button class="control-btn" id="nextBtn" title="Next">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- LP Collection Section -->
+      <section class="collection-section">
+        <h2>Your Collection</h2>
+        <div class="lp-grid" id="lpGrid">
+          <!-- LPs will be inserted by JavaScript -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <audio id="audioPlayer"></audio>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
