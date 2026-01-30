@@ -3,162 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vinyl Player - Virtual Turntable & LP Collection</title>
-  <meta name="description" content="Experience the nostalgia of vinyl records with Vinyl Player. Browse your virtual LP collection and enjoy a realistic turntable experience in your browser.">
-  <meta name="keywords" content="vinyl player, turntable, LP collection, music player, vinyl records, retro music">
-  <meta name="author" content="Vinyl Player">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="/">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7228257979516051" crossorigin="anonymous"></script>
+  <title>Color Tools - Free Color Picker, Converter & Palette Generator</title>
+  <meta name="description" content="Free online color tools including color picker, HEX/RGB/HSL converter, random palette generator, and color theory guide. Perfect for designers and developers.">
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-consent" id="cookieConsent">
-    <div class="cookie-content">
-      <p>We use cookies to enhance your experience and show personalized ads. By continuing to use this site, you agree to our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.</p>
-      <div class="cookie-buttons">
-        <button class="cookie-btn accept" id="acceptCookies">Accept All</button>
-        <button class="cookie-btn decline" id="declineCookies">Decline</button>
-      </div>
-    </div>
-  </div>
+  <header>
+    <h1>Color Tools</h1>
+    <p class="subtitle">Professional color utilities for designers and developers</p>
+  </header>
 
-  <div class="container">
-    <!-- Navigation -->
-    <nav class="main-nav">
-      <a href="/" class="nav-logo">Vinyl Player</a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-      </div>
-    </nav>
-
-    <header>
-      <h1>Vinyl Collection</h1>
-      <p class="subtitle">Experience the warmth of vinyl - Select an LP to play</p>
-    </header>
-
-    <main>
-      <!-- Introduction Section -->
-      <section class="intro-section">
-        <p>Welcome to Vinyl Player, your virtual turntable experience. Browse through our curated collection of LPs and enjoy the nostalgic feeling of vinyl records right in your browser. Click on any album to start playing!</p>
-      </section>
-
-      <!-- Vinyl Player Section -->
-      <section class="player-section">
-        <div class="turntable">
-          <div class="platter">
-            <div class="vinyl" id="vinyl">
-              <div class="vinyl-label" id="vinylLabel">
-                <span class="label-text" id="labelText">No LP</span>
-              </div>
-              <div class="vinyl-grooves"></div>
-            </div>
-          </div>
-          <div class="tonearm" id="tonearm">
-            <div class="tonearm-base"></div>
-            <div class="tonearm-arm"></div>
-            <div class="tonearm-head"></div>
-          </div>
+  <main>
+    <section class="tool-section">
+      <h2>Color Picker & Converter</h2>
+      <div class="tool-container">
+        <div class="color-display" id="colorDisplay"></div>
+        <div class="input-group">
+          <label for="colorPicker">Pick a Color:</label>
+          <input type="color" id="colorPicker" value="#4CAF50">
         </div>
-
-        <div class="now-playing">
-          <div class="track-info">
-            <h2 id="trackTitle">Select an LP</h2>
-            <p id="trackArtist">Choose from your collection below</p>
+        <div class="color-values">
+          <div class="value-item">
+            <label>HEX:</label>
+            <input type="text" id="hexValue" readonly>
+            <button class="copy-btn" onclick="copyToClipboard('hexValue')">Copy</button>
           </div>
-          <div class="progress-container">
-            <span id="currentTime">0:00</span>
-            <div class="progress-bar">
-              <div class="progress" id="progress"></div>
-            </div>
-            <span id="duration">0:00</span>
+          <div class="value-item">
+            <label>RGB:</label>
+            <input type="text" id="rgbValue" readonly>
+            <button class="copy-btn" onclick="copyToClipboard('rgbValue')">Copy</button>
           </div>
-          <div class="controls">
-            <button class="control-btn" id="prevBtn" title="Previous Track" aria-label="Previous Track">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-            </button>
-            <button class="control-btn play-btn" id="playBtn" title="Play/Pause" aria-label="Play or Pause">
-              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-            </button>
-            <button class="control-btn" id="nextBtn" title="Next Track" aria-label="Next Track">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-            </button>
-          </div>
-          <p class="controls-hint">Tip: Use Space to play/pause, Arrow keys to skip tracks</p>
-        </div>
-      </section>
-
-      <!-- LP Collection Section -->
-      <section class="collection-section">
-        <h2>Your Collection</h2>
-        <p class="section-description">Click on any album cover to load it onto the turntable and start playing.</p>
-        <div class="lp-grid" id="lpGrid">
-          <!-- LPs will be inserted by JavaScript -->
-        </div>
-      </section>
-
-      <!-- Features Section -->
-      <section class="features-section">
-        <h2>Why Vinyl Player?</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            </div>
-            <h3>Realistic Experience</h3>
-            <p>Watch the vinyl spin with authentic grooves and a moving tonearm that responds to playback.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-            </div>
-            <h3>Album Collection</h3>
-            <p>Browse through beautifully designed album covers with unique colors and styles.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-            <h3>Easy Controls</h3>
-            <p>Simple play, pause, and skip controls with keyboard shortcuts for hands-free operation.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Vinyl Player</h3>
-          <p>Experience the nostalgia of vinyl records with our virtual turntable. Free to use, no downloads required.</p>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <div class="footer-links">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Legal</h3>
-          <div class="footer-links">
-            <a href="/privacy.html">Privacy Policy</a>
-            <a href="/terms.html">Terms of Service</a>
+          <div class="value-item">
+            <label>HSL:</label>
+            <input type="text" id="hslValue" readonly>
+            <button class="copy-btn" onclick="copyToClipboard('hslValue')">Copy</button>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="copyright">© 2025 Vinyl Player. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
+    </section>
 
-  <audio id="audioPlayer"></audio>
+    <section class="tool-section">
+      <h2>Random Color Palette Generator</h2>
+      <button class="generate-btn" onclick="generatePalette()">Generate New Palette</button>
+      <div class="palette-container" id="paletteContainer"></div>
+    </section>
+
+    <section class="info-section">
+      <h2>Understanding Color Formats</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>HEX Colors</h3>
+          <p>Hexadecimal color codes are widely used in web design. They consist of 6 characters (0-9, A-F) representing red, green, and blue values. Example: #4CAF50</p>
+        </div>
+        <div class="info-card">
+          <h3>RGB Colors</h3>
+          <p>RGB (Red, Green, Blue) uses three numbers from 0-255 to define colors. This format is commonly used in CSS and programming. Example: rgb(76, 175, 80)</p>
+        </div>
+        <div class="info-card">
+          <h3>HSL Colors</h3>
+          <p>HSL (Hue, Saturation, Lightness) is intuitive for adjusting colors. Hue is 0-360 degrees, while saturation and lightness are percentages. Example: hsl(122, 39%, 49%)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Color Theory Tips</h2>
+      <div class="tips-list">
+        <div class="tip-item">
+          <h4>Complementary Colors</h4>
+          <p>Colors opposite on the color wheel create high contrast and vibrant looks. Great for call-to-action buttons.</p>
+        </div>
+        <div class="tip-item">
+          <h4>Analogous Colors</h4>
+          <p>Colors next to each other on the wheel create harmonious, pleasing designs. Perfect for backgrounds and gradients.</p>
+        </div>
+        <div class="tip-item">
+          <h4>Accessibility</h4>
+          <p>Ensure sufficient contrast between text and background (minimum 4.5:1 ratio for normal text). Use tools to check WCAG compliance.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Color Tools. Free to use for personal and commercial projects.</p>
+  </footer>
+
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
