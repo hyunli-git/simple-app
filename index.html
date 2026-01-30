@@ -3,12 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Color Tools - Free Color Picker, Converter & Palette Generator</title>
+  <meta name="description" content="Free online color tools including color picker, HEX/RGB/HSL converter, random palette generator, and color theory guide. Perfect for designers and developers.">
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <header>
+    <h1>Color Tools</h1>
+    <p class="subtitle">Professional color utilities for designers and developers</p>
+  </header>
+
+  <main>
+    <section class="tool-section">
+      <h2>Color Picker & Converter</h2>
+      <div class="tool-container">
+        <div class="color-display" id="colorDisplay"></div>
+        <div class="input-group">
+          <label for="colorPicker">Pick a Color:</label>
+          <input type="color" id="colorPicker" value="#4CAF50">
+        </div>
+        <div class="color-values">
+          <div class="value-item">
+            <label>HEX:</label>
+            <input type="text" id="hexValue" readonly>
+            <button class="copy-btn" onclick="copyToClipboard('hexValue')">Copy</button>
+          </div>
+          <div class="value-item">
+            <label>RGB:</label>
+            <input type="text" id="rgbValue" readonly>
+            <button class="copy-btn" onclick="copyToClipboard('rgbValue')">Copy</button>
+          </div>
+          <div class="value-item">
+            <label>HSL:</label>
+            <input type="text" id="hslValue" readonly>
+            <button class="copy-btn" onclick="copyToClipboard('hslValue')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-section">
+      <h2>Random Color Palette Generator</h2>
+      <button class="generate-btn" onclick="generatePalette()">Generate New Palette</button>
+      <div class="palette-container" id="paletteContainer"></div>
+    </section>
+
+    <section class="info-section">
+      <h2>Understanding Color Formats</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>HEX Colors</h3>
+          <p>Hexadecimal color codes are widely used in web design. They consist of 6 characters (0-9, A-F) representing red, green, and blue values. Example: #4CAF50</p>
+        </div>
+        <div class="info-card">
+          <h3>RGB Colors</h3>
+          <p>RGB (Red, Green, Blue) uses three numbers from 0-255 to define colors. This format is commonly used in CSS and programming. Example: rgb(76, 175, 80)</p>
+        </div>
+        <div class="info-card">
+          <h3>HSL Colors</h3>
+          <p>HSL (Hue, Saturation, Lightness) is intuitive for adjusting colors. Hue is 0-360 degrees, while saturation and lightness are percentages. Example: hsl(122, 39%, 49%)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Color Theory Tips</h2>
+      <div class="tips-list">
+        <div class="tip-item">
+          <h4>Complementary Colors</h4>
+          <p>Colors opposite on the color wheel create high contrast and vibrant looks. Great for call-to-action buttons.</p>
+        </div>
+        <div class="tip-item">
+          <h4>Analogous Colors</h4>
+          <p>Colors next to each other on the wheel create harmonious, pleasing designs. Perfect for backgrounds and gradients.</p>
+        </div>
+        <div class="tip-item">
+          <h4>Accessibility</h4>
+          <p>Ensure sufficient contrast between text and background (minimum 4.5:1 ratio for normal text). Use tools to check WCAG compliance.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Color Tools. Free to use for personal and commercial projects.</p>
+  </footer>
+
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
